@@ -4,3 +4,7 @@ pymongo
 passlib
 wtforms
 datetime
+Flask-SQLAlchemy
+Flask-Login
+psycopg2
+Werkzeug

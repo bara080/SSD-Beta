@@ -1,28 +1,18 @@
-# from flask import Blueprint, render_template, request, redirect, url_for, flash
-# from flask_login import login_user, logout_user, login_required
-# from app.models import Student
-# from app import bcrypt
+from flask import Blueprint, render_template, request, redirect, url_for
+from app.services.student_service import create_student, read_student, update_student, delete_student
 
-# student_bp = Blueprint('student', __name__)
+student_bp = Blueprint('student', __name__)
 
-# @student_bp.route('/register', methods=['GET', 'POST'])
-# def register():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-#         department = request.form['department']
-#         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-#         Student.create(username, hashed_password, department)
-#         flash('Registration successful')
-#         return redirect(url_for('student.portal'))
-#     return render_template('student/register.html')
+@student_bp.route('/students')
+def list_students():
+    # Implement reading all students
+    return render_template('student/student_list.html')
 
-# @student_bp.route('/portal')
-# @login_required
-# def portal():
-#     return render_template('student/portal.html')
+@student_bp.route('/student/create', methods=['GET', 'POST'])
+def create_student_view():
+    if request.method == 'POST':
+        # Extract form data and call create_student function
+        return redirect(url_for('student.list_students'))
+    return render_template('student/student_form.html')
 
-# @student_bp.route('/schedule_appointment')
-# @login_required
-# def schedule_appointment():
-#     return render_template('student/schedule_appointment.html')
+# Additional routes for update and delete as needed

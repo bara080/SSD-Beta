@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <h2>Students List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Initials</th>
+                <th>Major</th>
+                <th>Advisor ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.studentID }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.initials }}</td>
+                <td>{{ student.major }}</td>
+                <td>{{ student.advisorID }}</td>
+                <td>
+                    <!-- Add any action buttons or links here -->
+                    <a href="{{ url_for('student.edit_student', studentID=student.studentID) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ url_for('student.delete_student', studentID=student.studentID) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

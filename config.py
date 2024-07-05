@@ -1,25 +1,17 @@
 import os
-from pymongo import MongoClient
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
-# config = dotenv_values(".env")
-def mongo_connectdb():
-    # Retrieve the MongoDB URI from the environment variable
-    mongo_uri = os.getenv("MONGODB_URI")
 
-    if not mongo_uri:
-        raise ValueError("No MONGODB_URI set for the database connection")
+class Config():
+    # Database configuration
+    DB_NAME = os.getenv('DB_NAME')
+    DB_USER = os.getenv('DB_USER')
+    DB_PASSWORD = os.getenv('DB_PASSWORD')
+    DB_HOST = os.getenv('DB_HOST')
+    DB_PORT = os.getenv('DB_PORT')
 
-    try:
-        # Establishing the connection
-        client = MongoClient(mongo_uri)
-        db = client.get_default_database("piedb")
-        print("MongoDB connection established successfully.")
-        return db
-    except Exception as e:
-        print(f"Unable to connect to MongoDB: {e}")
-        return None
-    
-
+    # SQLAlchemy configuration
+    SQLALCHEMY_DATABASE_URI = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
