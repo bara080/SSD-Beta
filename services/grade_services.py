@@ -1,15 +1,31 @@
 from flask import Flask, request, render_template, session, redirect, url_for, flash
-from pymongo import MongoClient
+# from pymongo import MongoClient 
 import re
 
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = 'GeeksForGeeks'
 
-# Set up MongoDB connection
-client = MongoClient('mongodb://localhost:27017/')
-db = client['user_database']
-users_collection = db['users']
+
+#  change into postgress
+
+
+conn = psycopg2.connect(database="flask_db", 
+						user="postgres", 
+						password="root", 
+						host="localhost", port="5432") 
+
+cur = conn.cursor() 
+
+conn.commit() 
+
+cur.close() 
+conn.close() 
+
+# # Set up MongoDB connection
+# client = MongoClient('mongodb://localhost:27017/')
+# db = client['user_database']
+# users_collection = db['users']
 
 @app.route('/')
 @app.route('/login', methods=['GET', 'POST'])

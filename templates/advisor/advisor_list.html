@@ -16,7 +16,24 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Loop through advisors and display them here -->
+            {% for advisor in advisors %}
+            <tr>
+                <td>{{ advisor.id }}</td>
+                <td>{{ advisor.last_name }}</td>
+                <td>{{ advisor.first_name }}</td>
+                <td>{{ advisor.initials }}</td>
+                <td>{{ advisor.job_title }}</td>
+                <td>{{ advisor.department }}</td>
+                <td>
+                    <a href="/edit/{{ advisor.id }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/delete/{{ advisor.id }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7">No advisors found.</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
