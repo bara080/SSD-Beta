@@ -1,7 +1,7 @@
-// Custom JavaScript code here
+// TODO: ALWAYS TEST LOADING
 console.log("Main JS loaded.");
 
-
+// TODO: REGISTER USER
 
 document.getElementById("registrationForm").addEventListener("submit", function(event)
 {
@@ -15,4 +15,10 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     console.log("Password: " + password);
     alert("Registration successful!");
   });
-// you can also save user name on chrome storage
+
+
+// TODO: SAVE USER NAME ON STORAGE
+
+
+
+

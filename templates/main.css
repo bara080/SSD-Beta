@@ -6,6 +6,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -59,10 +61,6 @@ h2{
     display: block;
     font-size: 80px;
     padding: 30px 20px;
-}
-
-.get-started{
-  
 }
 
 /*---------end lang page------------*/
