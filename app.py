@@ -17,10 +17,11 @@ load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config.from_object('app.config.Config')
 
 # Initialize extensions
 db = SQLAlchemy(app)
+migrate = Migrate()
 bcrypt = Bcrypt(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
