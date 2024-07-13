@@ -6,26 +6,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
 html {
     scroll-behavior: smooth;
 }
+
 /*---------------body-------------*/
 body {
     padding-top: 0px;
     background-color: black;
 }
 
-.container {
-    margin-top: 0px;
-}
-
-
-body {
-    padding-top: 0px;
-    background-color: rgb(0, 0, 0);
-}
 h2{
     text-align: center;
     text-decoration: none;
@@ -33,11 +23,11 @@ h2{
 
 .container {
     margin-top: 0px;
-    color: white; /* Assuming you want to make text visible on the black background */
+    color: white;
 }
 
 /*-----------------------
-/   .btn , .grid , .welcome
+/   btn , grid , welcome
 /
 /REUSEABLE------------*/
 
@@ -210,17 +200,12 @@ h2{
 
 /*=======   test       =======*/
 
-
-
-
-
-
 .departments{
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow-x: auto;
-    scroll-behavior: smooth;
+    
 
 }
 .departments-list {
@@ -264,7 +249,6 @@ h2{
     width: 60%;
     z-index: 2;
 }
-
 
 ::-webkit-scrollbar {
     width: 8px;

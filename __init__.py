@@ -6,7 +6,7 @@ from flask_login import LoginManager
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+# load_dotenv()
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
@@ -15,6 +15,7 @@ login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__)
+    load_dotenv()
     app.config.from_object('app.config.Config')
 
     db.init_app(app)
@@ -30,5 +31,7 @@ def create_app():
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(advisor_bp)
+    
+    from app.models import Advisor, User, Department, Course, Grade
 
     return app

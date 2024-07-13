@@ -3,13 +3,15 @@ from datetime import datetime, timezone
 from dotenv import load_dotenv
 from flask import Flask, request, render_template, session, redirect, url_for, flash, logging
 from flask_bcrypt import Bcrypt
-from datetime import datetime
 from wtforms import StringField, Form, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from app.config import Config
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from app.models import Advisor, User, Department, Course, Grade
+from app.routes.auth import auth_bp
+from app.routes.advisor import advisor_bp
 
 
 # Load environment variables from .env file
@@ -21,18 +23,13 @@ app.config.from_object('app.config.Config')
 
 # Initialize extensions
 db = SQLAlchemy(app)
-migrate = Migrate()
+# db.init_app(app)
+# migrate = Migrate()
 bcrypt = Bcrypt(app)
 migrate = Migrate(app, db)
 login_manager = LoginManager(app)
 login_manager.login_view = 'auth.login'
 
-# Import models after db is initialized
-from app.models import Advisor, User, Department, Course, Grade
-
-# Import blueprints
-from app.routes.auth import auth_bp
-from app.routes.advisor import advisor_bp
 
 # Register blueprints
 app.register_blueprint(auth_bp)
