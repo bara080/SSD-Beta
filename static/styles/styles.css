@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-
-/*-----------------------REUSEABLE------------*/
 :root{
     --color-primary: #7380ec;
     --color-danger: #ff7782;
@@ -32,18 +30,34 @@
 }
 
 
-* {
-    margin: 0;
+*{
+    margin:0;
     padding: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-
 }
 
+html{
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: .88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
 *{
     color: var(--color-dark);
 }
+img{
+    display: block;
+    width: 100%;
+}
+
 h1{
     font-weight: 800;
     font-size: 1.8rem;
@@ -54,34 +68,15 @@ h4{font-size: .8rem;}
 h5{font-size: .77rem;}
 small{font-size: .75rem;}
 
-
 .text-muted{color: var(--color-info);}
 p{color: var(--color-dark-varient);}
 b{color: var(--color-dark);}
-
-/*-----------------------REUSEABLE------------*/
-
-html {
-    scroll-behavior: smooth;
-    font-size: 14px;
-}
-
-/*---------------body-------------*/
-body {
-    padding-top: 0px;
-    color: var(--color-dark);
-    overflow-x: none;
-    background: var(--color-background);
-    font-family: 'Poppins', sans-serif;
-}
-
 
 .primary{color: var(--color-primary);}
 .danger{color: var(--color-danger);}
 .success{color: var(--color-success)}
 .warning{color: var(--color-warning);}
 
-/* 
 .container{
     position: relative;
     display: grid;
@@ -90,308 +85,92 @@ body {
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
     padding-top: 4rem;
-} */
-
-
-
-.container {
-    margin-top: 0px;
-    color: white;
 }
-
-/*-----------------------REUSEABLE------------*/
-
-/*---------landing page------------*/
-
-.welcome-grid{
-    background-color: none;
-    margin-top: 50px;
-    margin-left: 50px;
+header h3{font-weight: 500;}
+header{
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+    background-color: var(--color-background);
 }
-.welcome{
-    /* display: flex; */
-    margin-top: 50px;
-    margin-left: 50px;
-}
-.wel{
-    margin-top: 50px;
-    margin-left: 50px;
-    text-decoration: none;
-    flex-direction: center;
-    display: block;
-    font-size: 80px;
-    padding: 30px 20px;
-}
-
-/*---------end lang page------------*/
-
-
-/*---------About--------------------*/
-#about {
-    padding: 30px 0;
-    color: white;
-}
-
-
-.about-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    background: blue;
-    border-color: aqua;
-    border-radius:10px;
-    height: 100%;
-}
-.about-list div
-{
-    background: green;
-    padding: 40px;
-    font-size: 13px;
-    border-right: 10px;
-    font-weight: 300;
-    border-radius: 10px ;
-    transition: background 0.5s, transform 0.5s;
-}
-
-/*----------- About end----------------*/
-
-
-
-/*---------form-------------------------*/
-
-/* #form-list {
-
-    border-radius: 5px;
-    margin-bottom: 100px;
-    background-position: center;
-    width: 100%;
-    height: 90vh;
-  }  */
-
-  .form-group {
-    margin-bottom: 15px;
-    padding: 10px;
-   
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  input[type="text"], input[type="email"], input[type="password"] {
-    width: 70%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-
-}
-.btn{
-    display: block;
-    text-decoration: none;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #0d0559;
-    border-radius: 6px;
-    padding: 14px 50px;
-    color: white;
-}
-.btn:hover{
-    background:#0d0559;
-}
-
-
-.login-link{
-    display: inline-block;
-}
-/*--------------form end---------------------*/
-
-/* BODY*/
-
-.form-frame{
-    background: rgba(33, 4, 249, 0.88);
-    padding: 40px;
-    font-size: 13px;
-    border-right: 10px;
-    font-weight: 300;
-    border-radius: 10px ;
-    margin-top: 80px;
-    width: 100%;
-    height: 90vh;
-}
-
-.grid-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 50px;
-    margin-top: 50px;
-}
-.grid{
-    background: rgba(33, 4, 249, 0.88);
-    padding: 50px;
-    font-size: 20px;
-    border-right: 10px;
-    font-weight: 300;
-    border-radius: 10px ;
-    transition: background 0.5s, transform 0.5s;
-}
-
-
-.dashboard-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-
-.dashboard{
-    background: rgba(33, 4, 249, 0.88);
-    padding: 40px;
-    font-size: 13px;
-    border-right: 10px;
-    font-weight: 300;
-    border-radius: 10px ;
-    transition: background 0.5s, transform 0.5s;
-}
-
-
-
-/*=======   test       =======*/
-
-section{
+header.active{box-shadow: var(--box-shadow);}
+header .logo{
     display: flex;
-    flex-wrap: wrap;
+    gap: .8rem;
+    margin-right: auto;
+}
+header .logo img{
+    width: 2rem;
+    height: 2rem;
 }
 
-.departments{
-    width: 300px;
-    margin: 1rem;
-    background-color:rgba(33, 4, 249, 0.88);
-    box-shadow: 0 4px 5px rgba(9, 1, 31, 0.719);
-    overflow: hidden;
-    border-radius: 5px;
-    position: relative;
-}
-
-.departments img{
-    width : 100%;
-}
-
-
-.departments-info {
+header,
+header .navbar{
     display: flex;
-    flex-direction: row;
-    width: 300px;
     align-items: center;
-    color: white;
+    justify-content: flex-end;
+    padding: 0 3rem;
+    color: var(--color-info);
+}
+header .navbar a{
+    display: flex;
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem 1rem;
-    letter-spacing: 0.5px;
-}
-
-
-.departments-info h3{
-    margin-top: 0;
-}
-
-.departments-info span{
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-    font-weight : bold;
-}
-.departments-info span.red{
-    color:red;
-}
-.departments-info span.green{
-    color:green;
-}
-.departments-info span.orange{
-    color:orange;
-}
-
-.overview{
-    background-color: black;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top:0;
-    max-height: 100%;
-    transform: translateY(101%);
-    transition: transform 0.3 ease-in;
-}
-
-.departments:hover .overview{
-    transform: translateY(0);
-}
-
-/* 
-.departments-l::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(9, 1, 31, 0.719), rgba(0, 0, 0, 0));
-    z-index: 1;
-}
-
-.departments-l .departments-info {
-    position: absolute;
-    padding: 2rem;
-    top: 25%;
-    z-index: 2;
-}
-
-.departments-l .overview.visible {
-    font-size: 14px;
-    padding: 2rem;
-    position: absolute;
-    top: 35%;
-    width: 60%;
-    z-index: 2;
-} */
-
-/* 
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f100;
-}
-
-::-webkit-scrollbar-track:horizontal {
-    margin: 1rem;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
-    border-radius: 100px;
-}
-
-.horizontal-list::-webkit-scrollbar-track {
-    margin: 1rem;
-} */
-
-
-
-
-/* Portal section  */
-
-.container-portal{
     position: relative;
-    display: grid;
-    width: 93%;
-    margin: 0 3rem;
-    gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
-    padding-top: 4rem;
+    height: 3.7rem;
+    transition: all 300ms ease;
+    padding: 0 2rem;
 }
+header .navbar a:hover {
+    padding-top: 1.5rem;
+}
+header .navbar a.active{
+    background: var(--color-light);
+    color: var(--color-primary);
+}
+header .navbar a.active::before{
+    content: "";
+    background-color: var(--color-primary);
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    left: 0;top: 0;
+}
+header #profile-btn{
+    display: none;
+    font-size: 2rem;
+    margin: .5rem 2rem 0 0;
+    cursor: pointer;
+}
+header .theme-toggler{
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+    margin-right: 2rem;
+}
+header .theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .theme-toggler span.active{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+
+/* User Profile section  */
 aside .profile{
     margin-top: 2rem;
     width: 13rem;
@@ -422,20 +201,18 @@ aside .profile .about{
     margin-top: 1rem;
 }
 
-/* Portal main section  */
-
-
-main{
+/* Home Section  */
+.main-portal{
     position: relative;
     margin-top: 1.4rem;
 }
-main .subjects{
+.main-portal .subjects{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.6rem;
 }
 
-main .subjects > div{
+.main-portal .subjects > div{
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -443,31 +220,31 @@ main .subjects > div{
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
-main .subjects > div:hover{
+.main-portal .subjects > div:hover{
     box-shadow: none;
 }
-main .subjects > div span{
+.main-portal .subjects > div span{
     background-color: var(--color-primary);
     padding: .5rem;
     border-radius: 50%;
     color: var(--color-white);
     font-size: 1.5rem;
 }
-main .subjects > div.mth span,main .subjects > div.cg span{background: var(--color-danger);}
+.main-portal .subjects > div.mth span,.main-portal .subjects > div.cg span{background: var(--color-danger);}
 main .subjects > div.cs span{background: var(--color-success);}
 
-main .subjects h3{
+.main-portal .subjects h3{
     margin: 1rem 0 0.6rem;
     font-size: 1rem;
 }
-main .subjects .progress{
+.main-portal .subjects .progress{
     position: relative;
     width: 89px;
     height: 89px;
     border-radius: 50%;
     margin: auto;
 }
-main .subjects svg circle{
+.main-portal .subjects svg circle{
     fill: none;
     stroke: var(--color-primary);
     stroke-width: 8;
@@ -476,27 +253,27 @@ main .subjects svg circle{
     stroke-dasharray: 110;
     stroke-dashoffset: 92;
 }
-main .subjects .eg svg circle{
+.main-portal .subjects .eg svg circle{
     stroke-dashoffset: 25;
     stroke-dasharray: 210;
 }
-main .subjects .mth svg circle{
+.main-portal .subjects .mth svg circle{
     stroke-dashoffset: 7;
     stroke-dasharray: 210;
 }
-main .subjects .cs svg circle{
+.main-portal .subjects .cs svg circle{
     stroke-dashoffset: 35;
     stroke-dasharray: 210;
 }
-main .subjects .cg svg circle{
+.main-portal .subjects .cg svg circle{
     stroke-dashoffset: 0;
     stroke-dasharray: 210;
 }
-main .subjects .net svg circle{
+.main-portal .subjects .net svg circle{
     stroke-dashoffset: 5;
     stroke-dasharray: 210;
 }
-main .subjects .progress .number{
+.main-portal .subjects .progress .number{
     position: absolute;
     top: 0;left: 0;
     height: 100%;
@@ -505,10 +282,12 @@ main .subjects .progress .number{
     justify-content: center;
     align-items: center;
 }
-main .subjects small{
+.main-portal .subjects small{
     margin-top: 1rem;
     display: block;
 }
+
+/* Table design */
 main .timetable{
     margin-top: 2rem;
 }
@@ -526,6 +305,7 @@ main .timetable table{
 }
 main .timetable span{display: none;}
 main .timetable table:hover{box-shadow: none;}
+
 main table tbody td{
     height: 2.8rem;
     border-bottom: 1px solid var(--color-light);
@@ -557,6 +337,7 @@ main .timetable.active span{
     color: var(--color-dark);
     cursor: pointer;
 }
+
 .timetable div{
     position: relative;
     width: 50%;
@@ -613,19 +394,66 @@ main .timetable.active .closeBtn{
 
 
 
-/* MOBILE STYLES: BODY*/
 
-@media (max-width: 768px) {
-    body {
-        padding-top: 0px;
+/* MEDIA QUERIES  */
+@media screen and (max-width: 1200px) {
+    html{font-size: 12px;}
+    .container{
+        grid-template-columns: 13rem auto 20rem;
     }
+    header{position: fixed;}
+    .container{padding-top: 4rem;}
+    header .logo h2{display: none;}
+    header .navbar h3{display: none;}
+    header .navbar a{width: 4.5rem; padding: 0 1rem;}
 
-    .container {
-        margin-top: 0px;
-        padding: 10px; /* Adding some padding for better readability on mobile */
+    main .subjects{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1;
     }
+    main .timetable{
+        width: 150%;
+        position: absolute;
+        padding: 4rem 0 0 0;
+    }
+}
 
-    .navbar {
-        font-size: 14px; /* Adjusting navbar font size for mobile */
+
+@media screen and (max-width: 768px){
+    html{font-size: 10px;}
+    header{padding: 0 .8rem;}
+    .container{width: 100%; grid-template-columns: 1fr;margin: 0;}
+    header #profile-btn{display: inline;}
+    header .navbar{padding: 0;}
+    header .navbar a{margin: 0 .5rem 0 0;}
+    header .theme-toggler{margin: 0;}
+    aside{
+        position: absolute;
+        top: 4rem;left: 0;right: 0;
+        background-color: var(--color-white);
+        padding-left: 2rem;
+        transform: translateX(-100%);
+        z-index: 10;
+        width:18rem;
+        height: 100%;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        transition: all 2s ease;
+    }
+    aside.active{
+        transform: translateX(0);
+    }
+    main{padding: 0 2rem;}
+    main .timetable{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+    main .timetable table{
+        width: 100%;
+        margin: 0;
+    }
+    .right{
+        width: 100%;
+        padding: 2rem;
     }
 }

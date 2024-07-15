@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container">
     <h2>Sign Up</h2>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('auth.signups') }}">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" required>
@@ -16,8 +16,8 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
+        <p>Already have an account?</p>
         <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
-    <p>Already have an account? 
 </div>
 {% endblock %}

@@ -9,6 +9,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(250), unique=True, nullable=False)
     created_on = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
     last_login = db.Column(db.DateTime)
-    
+
     def get_id(self):
-        return self.user_id
+        return str(self.user_id)  # Ensure it returns a string
+

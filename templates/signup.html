@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container">
     <h2 class="w">Sign Up</h2>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('auth.login') }}">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" required>
