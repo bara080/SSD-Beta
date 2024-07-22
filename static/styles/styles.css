@@ -393,6 +393,29 @@ main .timetable.active .closeBtn{
 
 
 
+/* ========DASH HEADER======== */
+
+.metrics{
+    width : 50px;
+    height : 80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: red;
+}
+
+.team{
+    width : 50px;
+    height : 80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: red;
+
+}
+
+
+
 
 
 /* MEDIA QUERIES  */
@@ -417,6 +440,22 @@ main .timetable.active .closeBtn{
         padding: 4rem 0 0 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 768px){

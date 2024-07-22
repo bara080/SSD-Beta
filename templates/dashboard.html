@@ -1,20 +1,155 @@
-{%extends "layout.html"%}
-
+{% extends "layout.html" %}
 
 {% block body %}
-<h1>Dashboard</h1>
-<div class = "dashboard-list">
-    
-    <div class = "dashboard">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
+<body>
+    <!-- Nav bar -->
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="logo">
+                </span>
+                <div class="text header-text">
+                    <span class="name">BrightMinds</span>
+                    <span class="profession">S S D</span>
+                </div>
+            </div>
+            <!-- toggle icon -->
+            <i class="fas fa-angle-double-left toggle"></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <a href="#">
+                        <i class="fas fa-search icon"></i>
+                        <input type="text" class="search" placeholder="Search...">
+                    </a>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-home icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-chart-line icon"></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-bell icon"></i>
+                            <span class="text nav-text">Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-calendar-alt icon"></i>
+                            <span class="text nav-text">Schedule</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-database icon"></i>
+                            <span class="text nav-text">Data</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="fas fa-sign-out-alt icon"></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sign-out-alt icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="fas fa-moon icon moon"></i>
+                        <i class="fas fa-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
 
-</div>
-<div class = "dashboard">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
+    <!-- Home dashboard -->
+    <div class="dash-home">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="metrics">
+        <div class="team">Teams</div>
+        <div class="team">Projects</div>
+        <div class="team">Active</div>
+    </div>
+    <div class="metrics">
+        <div class="chart-pie">Teams</div>
+        <div class="chart-pie">Projects</div>
+        <div class="chart-pie">Active</div>
+    </div>
 
-</div>
-</div>
+    <h1>Welcome to My Flask Dashboard</h1>
+    <div class="metrics">
+        <div class="chart-container">
+            <canvas id="income_vs_expense"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="income_vs_category"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="overtime_expenditure"></canvas>
+        </div>
+    </div>
 
- {% endblock %}
+    <!-- Dashboard content -->
+    <div class="dashboard-list">
+        <div class="dashboard">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
+        </div>
+        <div class="dashboard">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
+        </div>
+    </div>
+
+    <!-- Tabular data -->
+    <div class="col-sm-10 ml-auto mr-auto">
+        <h2>Student History</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ entry.date.strftime("%m-%d-%Y") }}</td>
+                        <td>{{ entry.type }}</td>
+                        <td>{{ entry.category }}</td>
+                        <td>{{ entry.amount }}</td>
+                        <td><a href="{{ url_for('delete', entry_id=entry.id) }}" class="btn btn-outline-danger btn-sm">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}

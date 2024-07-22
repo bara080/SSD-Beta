@@ -6,7 +6,7 @@
             <div class="profile">
                 <div class="top">
                     <div class="profile-photo">
-                        <img src="/Users/bara/flask/app/assets/images/profile-1.jpg" alt="">
+                        <img src="{{ url_for('static', filename='assets/images/profile-1.jpg') }}" alt="logo">
                     </div>
                     <div class="info">
                         <p>Hello, <b>Bara</b> </p>
@@ -23,7 +23,7 @@
                     <h5>Email</h5>
                     <p>unknown@gmail.com</p>
                     <h5>Address</h5>
-                    <p>Ghost town Road, New York, America</p>
+                    <p>Brooklyn NY</p>
                 </div>
             </div>
         </aside>
@@ -126,21 +126,21 @@
             <div class="leaves">
                 <h2>Teachers on leave</h2>
                 <div class="teacher">
-                    <div class="profile-photo"><img src="./images/profile-2.jpeg" alt=""></div>
+                    <div class="profile-photo"><img src="{{ url_for('static', filename='assets/images/profile-4.jpg') }}" alt="logo"></div>
                     <div class="info">
                         <h3>The Professor</h3>
                         <small class="text-muted">Full Day</small>
                     </div>
                 </div>
                 <div class="teacher">
-                    <div class="profile-photo"><img src="./images/profile-3.jpg" alt=""></div>
+                    <div class="profile-photo"><img src="{{ url_for('static', filename='assets/images/profile-2.jpeg') }}" alt="logo"></div>
                     <div class="info">
                         <h3>Lisa Manobal</h3>
                         <small class="text-muted">Half Day</small>
                     </div>
                 </div>
                 <div class="teacher">
-                    <div class="profile-photo"><img src="./images/profile-4.jpg" alt=""></div>
+                    <div class="profile-photo"><img src="{{ url_for('static', filename='assets/images/profile-3.jpg') }}" alt="logo"></div>
                     <div class="info">
                         <h3>Himanshu Jindal</h3>
                         <small class="text-muted">Full Day</small>

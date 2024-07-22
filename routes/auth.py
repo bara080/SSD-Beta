@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
 from app.models.user import User
 from app import db, bcrypt
-
 from flask import Blueprint, request, redirect, url_for, flash, render_template
 from flask_login import login_user
 from app import db, bcrypt
@@ -23,8 +22,8 @@ def signup():
 
         if not username or not password or not email:
             print("Form data is missing.")
-            flash('Please fill out all fields.')
-            return render_template('signup.html')
+            flash('Please fill out all fields.', 'warning')
+            return render_template('auth/signup.html')
 
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
         new_user = User(username=username, password=hashed_password, email=email)
@@ -33,33 +32,34 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             print(f"New user created: {username}, {email}")
-            flash('Account created successfully!')
+            flash('Account created successfully!', 'success')
             return redirect(url_for('auth.login'))
         except Exception as e:
             db.session.rollback()
             print(f"Error: {e}")
-            flash('Error creating account. Please try again.')
+            flash('Error creating account. Please try again.', 'danger')
 
-    return render_template('signup.html')
+    return render_template('auth/signup.html')
+
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form.get('username')
+        email = request.form.get('email')
         password = request.form.get('password')
 
-        print(f"Login attempt: {username}, Password: {'provided' if password else 'not provided'}")
+        print(f"Login attempt: {email}, Password: {'provided' if password else 'not provided'}")
 
-        if not username or not password:
-            print("Username or password not provided.")
-            flash('Invalid username or password', 'danger')
-            return render_template('login.html')
+        if not email or not password:
+            print("Email or password not provided.")
+            flash('Invalid email or password', 'danger')
+            return redirect(url_for('auth.login'))  # Redirect to avoid form resubmission on refresh
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(email=email).first()
         print(f"Retrieved user: {user}")
 
         if user:
-            print(f"User found: {user.username}")
+            print(f"User found: {user.email}")
             password_check = bcrypt.check_password_hash(user.password, password)
             print(f"Password check result: {password_check}")
 
@@ -67,19 +67,17 @@ def login():
                 print("Password check passed.")
                 login_user(user)
                 flash('Logged in successfully!', 'success')
-                return redirect(url_for('portal'))  # replace with your protected route
+                return redirect(url_for('portal'))
             else:
                 print("Invalid password.")
-                flash('Invalid username or password', 'danger')
+                flash('Invalid email or password', 'danger')
         else:
             print("User not found.")
-            flash('Invalid username or password', 'danger')
+            flash('Invalid email or password', 'danger')
 
-    return render_template('login.html')
+    return render_template('auth/login.html')
 
 
-
-# logout route
 @auth_bp.route('/logout')
 @login_required
 def logout():
