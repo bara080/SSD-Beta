@@ -1,6 +1,4 @@
 {%extends "layout.html"%}
-
-
 {% block body %}
 
 <div class = "welcome-grid">
@@ -11,30 +9,50 @@
 </div>
 </div>
 
-
 <!-- Departments -->
 
  <section id="main">
     <div class="departments">
-            <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
+        <img src="{{ url_for('static', filename='assets/images/eng-images.jpeg') }}" alt="logo">
             <div class="departments-info">
-                <h3>Engineering</h3>
+                <h3>Product & Engineering</h3>
                 <span class="red">9.8</span>
                 <div class="overview">
                     <h3>overview</h3>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa
-                     autem quo dolore! Quisquam dolores accusamus, quam commodi provident 
-                     quibusdam perspiciatis reiciendis ipsum aliquam excepturi molestiae facilis!
-                      Quas, perferendis velit!
+                <br>Studied Scrum, Agile, and Waterfall project management methodologies.​<br>
+                <br>Ensured engineering delivers the right software at the right time, meeting user requirements.​<br>
+                <br>Learned various technology stacks and API usage for product development and third-party integration across data ecosystems.
 
                 </div>
             </div>
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/test-1.jpeg') }}" alt="logo">
+        <div class="departments-info">
+            <h3>UX & QA</h3>
+            <span class="green">9.8</span>
+            <div class="overview">
+                <h3>overview</h3>
+                QA
+                <br>
+                 Automated & Manual and types Functional,Performance,Usability,Security,Compatibility,​
+                 Regression,Integration, and Acceptance of testing.​
+                <br>
+                 A great software is well tested!
+                <br>
+                UX
+                <br>
+                 3-column layout helps users navigate easier​
+                 UX uses real people to test designs through various sites
+                 People want contrasting things
+            </div>
+        </div>
 
     </div>
     <div class="departments">
-        <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
+        <img src="{{ url_for('static', filename='assets/images/marketing.jpeg') }}" alt="logo">
         <div class="departments-info">
-            <h3>overview</h3>
+            <h3>Marketing & Sales</h3>
             <span class="green">9.8</span>
             <div class="overview">
                 <h3>overview</h3>
@@ -46,11 +64,41 @@
             </div>
         </div>
 
-</div>
-<div class="departments">
-    <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/prof-2.png') }}" alt="logo">
+        <div class="departments-info">
+            <h3>Professional Services</h3>
+            <span class="green">9.8</span>
+            <div class="overview">
+                <h3>overview</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa
+                 autem quo dolore! Quisquam dolores accusamus, quam commodi provident 
+                 quibusdam perspiciatis reiciendis ipsum aliquam excepturi molestiae facilis!
+                  Quas, perferendis velit!
+
+            </div>
+        </div>
+
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/dev2.jpeg') }}" alt="logo">
+        <div class="departments-info">
+            <h3>Support & DevOps</h3>
+            <span class="green">9.8</span>
+            <div class="overview">
+                <h3>overview</h3>
+                <br>
+                Familiarized ourselves with Evison's AWS cloud services and data (EC2)​
+                Visuals of 'Zero Trust Security Model', and other similar concepts (IAM, SSO)
+            </div>
+        </div>
+
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/cet-1.png') }}" alt="logo">
     <div class="departments-info">
-        <h3>Engineering</h3>
+        <h3>Client Experice</h3>
         <span class="orange">9.8</span>
         <div class="overview">
             <h3>overview</h3>
@@ -62,11 +110,45 @@
         </div>
     </div>
 
-</div>
-<div class="departments">
-    <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/fin-hr.jpeg') }}" alt="logo">
     <div class="departments-info">
-        <h3>Engineering</h3>
+        <h3>Finance</h3>
+        <span class="orange">9.8</span>
+        <div class="overview">
+            <h3>overview</h3>
+            Finance​
+            <br>
+            Finance is about driving a business to financial success by maximizing value and minimizing risk.​
+            ​<br>
+            Budgeting and balancing expenses with revenues is much more complicated than just plugging in numbers?​
+            ​
+
+        </div>
+    </div>
+
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/hr.jpeg') }}" alt="logo">
+    <div class="departments-info">
+        <h3>Human Resource</h3>
+        <span class="orange">9.8</span>
+        <div class="overview">
+            <h3>overview</h3>
+            HR​
+            HR is about promoting innovation, growth and a sense of community within a company. These qualities help in recruiting and retaining employees.​
+            ​<br>
+            A onboarding process 
+
+        </div>
+    </div>
+
+    </div>
+    <div class="departments">
+        <img src="{{ url_for('static', filename='assets/images/com2.jpeg') }}" alt="logo">
+    <div class="departments-info">
+        <h3>Communication</h3>
         <span class="orange">9.8</span>
         <div class="overview">
             <h3>overview</h3>
@@ -78,49 +160,16 @@
         </div>
     </div>
 
-</div>
-<div class="departments">
-    <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
-    <div class="departments-info">
-        <h3>Engineering</h3>
-        <span class="orange">9.8</span>
-        <div class="overview">
-            <h3>overview</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa
-             autem quo dolore! Quisquam dolores accusamus, quam commodi provident 
-             quibusdam perspiciatis reiciendis ipsum aliquam excepturi molestiae facilis!
-              Quas, perferendis velit!
-
-        </div>
     </div>
-
-</div>
-<div class="departments">
-    <img src="https://image.tmdb.org/t/p/w1280/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg" alt="Engineering">
-    <div class="departments-info">
-        <h3>Engineering</h3>
-        <span class="orange">9.8</span>
-        <div class="overview">
-            <h3>overview</h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsa
-             autem quo dolore! Quisquam dolores accusamus, quam commodi provident 
-             quibusdam perspiciatis reiciendis ipsum aliquam excepturi molestiae facilis!
-              Quas, perferendis velit!
-
-        </div>
-    </div>
-
-</div>
  </section>
 
 
 
-
-
-
 <h1 class="card-subtitle">About SSD</h1>
+
 <div class = "grid-list">
     <div class="grid">
+        <h1>Support Services</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
             impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
             Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
@@ -131,7 +180,34 @@
         </p>
     </div>
     <div class="grid">
+        <h1>4 quandrant CET</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+    </div>
+    <div class="grid">
+        <h1>Communication Tackticks</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+    </div>
+</div>
+<br><br>
+<h1 class="card-subtitle">About SSD</h1>
 
+<div class = "grid-list">
+    <div class="grid">
+        <h1>Philanthropy</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
             impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
             Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
@@ -142,6 +218,18 @@
         </p>
     </div>
     <div class="grid">
+        <h1>Support Services</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
+            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
+            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
+        </p>
+    </div>
+    <div class="grid">
+        <h1>Support Services</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
             impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
             Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
@@ -153,40 +241,14 @@
     </div>
 </div>
 
-<h1 class="card-subtitle">About SSD</h1>
+<div class="interns">
+    <div>
+        <img src="" alt="intern-picture3">
+        <h1>Name</h1>
+        <p></p>
+        <p>fun thing</p>
+    </div>
 
-<div class = "grid-list">
-    <div class="grid">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-    </div>
-    <div class="grid">
-
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-    </div>
-    <div class="grid">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia 
-            impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? 
-            Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!
-        </p>
-    </div>
 </div>
 
 {% endblock %}

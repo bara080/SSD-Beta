@@ -41,12 +41,14 @@
     <!-- Pass the data to main.js -->
     {% block content %}{% endblock %}
     {% if income_vs_expense is defined %}
-    <script id="income_vs_expense_data" type="application/json">{{ income_vs_expense | tojson }}</script>
-    <script id="income_category_data" type="application/json">{{ income_category | tojson }}</script>
+
+    <script id="student_vs_advisor_data" type="application/json">{{ student_vs_advisor_data | tojson }}</script>
+    <script id="student_semesters_data" type="application/json">{{ student_semesters_data | tojson }}</script>
     <script id="over_time_expenditure" type="application/json">{{ over_time_expenditure | tojson }}</script>
     <script id="dates_label" type="application/json">{{ dates_label | tojson }}</script>
-    {% endif %}
 
+
+    {% endif %}
 
     {% include "includes/_footer.html" %}
 </body>

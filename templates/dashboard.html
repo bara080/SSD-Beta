@@ -59,7 +59,7 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class="fas fa-sign-out-alt icon"></i>
-                            <span class="text nav-text">Logout</span>
+                            <span class="text nav-text">Report</span>
                         </a>
                     </li>
                 </ul>
@@ -90,43 +90,40 @@
         <h1>Dashboard</h1>
     </div>
     <div class="metrics">
-        <div class="team">Teams</div>
-        <div class="team">Projects</div>
-        <div class="team">Active</div>
-    </div>
-    <div class="metrics">
-        <div class="chart-pie">Teams</div>
-        <div class="chart-pie">Projects</div>
-        <div class="chart-pie">Active</div>
+        <div class="team">
+            <i class="fa-solid fa-user icon"></i>
+            Total Students - 10k
+        </div>
+        <div class="team">
+            <i class="fa-solid fa-list-check icon"></i>
+            Tasks - 30
+        </div>
+        <div class="team">
+            <i class="fa-solid fa-eye icon"></i>
+            Active Cases - 40
+        </div>
     </div>
 
-    <h1>Welcome to My Flask Dashboard</h1>
+    <h1></h1>
     <div class="metrics">
         <div class="chart-container">
-            <canvas id="income_vs_expense"></canvas>
+            <canvas id="student_vs_advisor"></canvas>
         </div>
         <div class="chart-container">
-            <canvas id="income_vs_category"></canvas>
+            <canvas id="student_vs_semesters"></canvas>
         </div>
         <div class="chart-container">
-            <canvas id="overtime_expenditure"></canvas>
+            <canvas id="student_courses"></canvas>
         </div>
     </div>
 
     <!-- Dashboard content -->
-    <div class="dashboard-list">
-        <div class="dashboard">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
-        </div>
-        <div class="dashboard">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis officia impedit quibusdam qui, expedita quisquam tempore voluptatum repellat fugit et? Corporis consequuntur maiores commodi dolor velit porro ad quo debitis!</p>
-        </div>
-    </div>
+   
 
     <!-- Tabular data -->
-    <div class="col-sm-10 ml-auto mr-auto">
-        <h2>Student History</h2>
-        <table class="table">
+    <!-- <div class="col-sm-10 ml-auto mr-auto">
+        <h2>Student History</h2> -->
+        <!-- <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>
@@ -149,7 +146,7 @@
                     </tr>
                 {% endfor %}
             </tbody>
-        </table>
-    </div>
+        </table> -->
+    <!-- </div> -->
 </body>
 {% endblock %}

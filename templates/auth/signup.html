@@ -16,10 +16,8 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
-        <p>Already have an account?</p>
+        <p>Already have account? <a href="{{ url_for('auth.login') }}">login</a></p>
         <button type="submit" class="btn btn-primary">Sign Up</button>
-        <p>Don't have an account? <a href="{{ url_for('auth.login') }}">login</a></p>
-        <button type="submit" class="btn btn-primary">Login</button>
     </form>
 
     {% with messages = get_flashed_messages(with_categories=true) %}

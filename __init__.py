@@ -24,11 +24,6 @@ login_manager = LoginManager()
 def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config.Config')
-
-    # def get_income_vs_expense_data():
-    #     income_vs_expense = [500, 1000]
-    #     # Function to fetch or calculate income_vs_expense data
-    #     return [1000, 1500]  # Example data
     
     # Initialize extensions
     db.init_app(app)
@@ -60,7 +55,6 @@ def create_app():
     # Register routes
     @app.route('/')
     def home():
-
         return render_template("home.html")
 
     @app.route('/auth/signup', methods=['GET', 'POST'])
@@ -70,17 +64,18 @@ def create_app():
     @app.route('/portal')
     def portal():
         return render_template("portal.html")
-    
+
     @app.route('/dashboard')
     def dashboard():
-        income_vs_expense = [500, 1000]  # Example data
-        income_category = [200, 300, 400, 100]  # Example data
-        over_time_expenditure = [150, 200, 250, 300, 350]  # Example data
-        dates_label = ["January", "February", "March", "April", "May"]  # Example labels
+        
+        student_vs_advisor_data = [300, 700]  
+        student_semesters_data = [150, 200, 100, 50] 
+        over_time_expenditure = [150, 200, 250, 300, 350]  
+        dates_label = ["January", "February", "March", "April", "May"]  
 
         return render_template('dashboard.html',
-                               income_vs_expense=income_vs_expense,
-                               income_category=income_category,
+                               student_vs_advisor_data=student_vs_advisor_data,
+                               student_semesters_data=student_semesters_data,
                                over_time_expenditure=over_time_expenditure,
                                dates_label=dates_label)
 

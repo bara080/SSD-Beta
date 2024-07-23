@@ -61,29 +61,19 @@
 //   // });
 
 //   // TODO: SAVE USER NAME ON STORAGE
-
-
-// TODO : ADD DOM LOADING FOR THE METRICS
-
 document.addEventListener("DOMContentLoaded", function() {
-    let income_vs_expense_data = JSON.parse(document.getElementById('income_vs_expense_data').textContent);
-    let income_category_data = JSON.parse(document.getElementById('income_category_data').textContent);
+    let student_vs_advisor_data = JSON.parse(document.getElementById('student_vs_advisor_data').textContent);
+    let student_semesters_data = JSON.parse(document.getElementById('student_semesters_data').textContent);
     let over_time_expenditure = JSON.parse(document.getElementById('over_time_expenditure').textContent);
     let labels = JSON.parse(document.getElementById('dates_label').textContent);
 
-    // Chart.scaleService.updateScaleDefaults('linear', {
-    //     ticks: {
-    //         min: 0
-    //     }
-    // });
-
-    let income_vs_expense_chart = new Chart(document.getElementById('income_vs_expense'), {
+    let student_vs_advisor_chart = new Chart(document.getElementById('student_vs_advisor'), {
         type: 'pie',
         data: {
-            labels: ['expense', 'income'],
+            labels: ['Advisors', 'Students'],
             datasets: [{
-                label: "Income Vs Expenses",
-                data: income_vs_expense_data,
+                label: "Student Vs Advisor",
+                data: student_vs_advisor_data,
                 backgroundColor: ['#5DA5DA', '#FAA43A', '#60BD68', '#B276B2', '#E16851', '#FB8267'],
                 borderWidth: 1,
                 hoverBorderColor: "black",
@@ -95,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         options: {
             title: {
                 display: true,
-                text: "Income Vs Expenses",
+                text: "Student Vs Advisor",
                 fontSize: 20,
             },
             legend: {
@@ -111,13 +101,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    let income_vs_category_chart = new Chart(document.getElementById('income_vs_category'), {
+    let student_vs_semesters_chart = new Chart(document.getElementById('student_vs_semesters'), {
         type: 'bar',
         data: {
-            labels: ['investment', 'rent', 'salary', 'side_hustle'],
+            labels: ['Spring', 'Summer', 'Fall', 'Winter'],
             datasets: [{
-                label: "Categories Of Income",
-                data: income_category_data,
+                label: "Semester Of Student",
+                data: student_semesters_data,
                 backgroundColor: ['#5DA5DA', '#FAA43A', '#60BD68', '#B276B2', '#E16851', '#FB8267'],
                 borderWidth: 1,
                 hoverBorderColor: "black",
@@ -129,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
         options: {
             title: {
                 display: true,
-                text: "Income Categories",
+                text: "Student Semesters",
                 fontSize: 20,
             },
             legend: {
@@ -145,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    new Chart(document.getElementById("overtime_expenditure"), {
+    new Chart(document.getElementById("student_courses"), {
         type: "line",
         data: {
             labels: labels,

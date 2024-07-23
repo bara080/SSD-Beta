@@ -3,6 +3,7 @@
 {% block body %}
 <div class="form-container">
     <!--  -->
+    <h1>Please Login</h1>
     <form method="post" action="{{ url_for('auth.login') }}">
         <div class="form-group">
             <label for="email">Email</label>
@@ -11,11 +12,14 @@
             <input type="password" id="password" name="password" required>
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
+
+
+        <div class="form-group-btn">
+            <p>Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign up</a></p>
+            <!-- <p>Already have an account? <a href="{{ url_for('auth.login') }}">login in</a></p> -->
+        </div>
+
     </form>
-    <p>Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign up</a></p>
-    <p>Don't have an account? <a href="{{ url_for('auth.login') }}">Sign up</a></p>
-
-
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
